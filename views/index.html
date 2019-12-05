@@ -11,6 +11,21 @@
     <link rel="stylesheet" type="text/css" href="/css/home.css">
     <style>
         .inline{display: inline ; margin-left:10px;}
+
+        dl {
+          display: flex;
+          flex-flow: row wrap;
+          border: solid #333;
+          border-width: 1px 1px 0 1px;
+        }
+        dt {
+          padding:  1em;
+        }
+        dd {
+          border-bottom: 1px solid #333;
+          padding:  1em;
+        }
+
     </style>
     <script>
         function showImg(url){
@@ -405,11 +420,11 @@
                                     // console.log(data)
                                     $scrmodal.modal('hide');
 
-                                    if ( engine === "axe" ) {
-                                      data.data = data.data.replace(/(<td.+?>)(.+?)(<\/td>)/g, function() {
-                                        return arguments[1] + arguments[2].replace(/</g,'&lt;').replace(/>/g,'&gt;') + arguments[3];
-                                      });
-                                    }
+                                    // if ( engine === "axe" ) {
+                                    //   data.data = data.data.replace(/(<td.+?>)(.+?)(<\/td>)/g, function() {
+                                    //     return arguments[1] + arguments[2].replace(/</g,'&lt;').replace(/>/g,'&gt;') + arguments[3];
+                                    //   });
+                                    // }
 
                                     $( "#test-results" ).empty().append( data.data ).attr('aria-busy', 'false');
 
@@ -418,7 +433,7 @@
                                             $('#test-results-table').table2CSV({delivery:'download'}, event);
                                         });
                                         $(function() {
-                                            $("#test-results-table").tablesorter({sortList: [[0,0]], headers: {2:{sorter: false}, 3:{sorter: false}, 4:{sorter: false}, 5:{sorter: false} }});
+                                            $("#test-results-table").tablesorter({sortList: [[0,1]], headers: {2:{sorter: false}, 3:{sorter: false}, 4:{sorter: false}, 5:{sorter: false} }});
                                         });
                                     },100)
                                 })
