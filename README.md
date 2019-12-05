@@ -18,7 +18,7 @@ For node applications, it can be integrated into [NemoJS testing framework](http
 ```sh
 $ git clone https://github.com/paypal/AATT.git
 $ cd AATT
-$ npm i
+$ yarn
 $ DEBUG=AATT* http_port=3000 node app.js . (If you want to run in Debug mode printing logs)
 ```
 $sudo node app.js will run in default port 80 without printing log information
